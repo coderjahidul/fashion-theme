@@ -623,9 +623,10 @@
 .variations_form .reset_variations {
 	display: inline-block;
 	margin-top: .75rem;
-	font-size: .75rem;
+	font-size: 1rem;
 	color: var(--muted-foreground);
 	text-decoration: underline;
+	font-weight: 500;
 }
 
 .single_variation_wrap {
@@ -721,7 +722,7 @@
 .buy-now-button {
 	flex-basis: 100%;
 	min-height: 3rem;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 }
 
@@ -2565,7 +2566,8 @@ ul.woocommerce-order-overview li strong {
 	}
 
 	.search-overlay__form input[type="search"],
-	.qty-stepper input {
+	.qty-stepper input,
+	.qty-stepper__slot .qty-stepper__value {
 		height: auto;
 		min-height: 0;
 		padding-block: 0;

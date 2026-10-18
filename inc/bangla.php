@@ -199,6 +199,25 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'orpitey_bn_fragments', 99 );
 add_filter( 'woocommerce_update_order_review_fragments', 'orpitey_bn_fragments', 99 );
 
 /**
+ * Variation prices are injected by script from JSON, which the page buffer skips.
+ *
+ * @param array $data Variation data.
+ * @return array
+ */
+function orpitey_bn_variation_data( $data ) {
+	if ( ! orpitey_bn_digits_enabled() || ! is_array( $data ) ) {
+		return $data;
+	}
+	foreach ( array( 'price_html', 'availability_html' ) as $key ) {
+		if ( ! empty( $data[ $key ] ) && is_string( $data[ $key ] ) ) {
+			$data[ $key ] = orpitey_bn_html( $data[ $key ] );
+		}
+	}
+	return $data;
+}
+add_filter( 'woocommerce_available_variation', 'orpitey_bn_variation_data' );
+
+/**
  * Only localise on the storefront (including WooCommerce AJAX fragments).
  *
  * @return bool

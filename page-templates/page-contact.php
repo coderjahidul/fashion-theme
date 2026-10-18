@@ -24,7 +24,7 @@ $info = array(
 	array( 'clock', __( 'খোলার সময়', 'orpitey' ), orpitey_mod( 'contact_hours' ), '' ),
 );
 if ( orpitey_mod( 'contact_whatsapp' ) ) {
-	$info[] = array( 'message', 'WhatsApp', orpitey_mod( 'contact_whatsapp' ), 'https://wa.me/' . preg_replace( '/\D/', '', orpitey_mod( 'contact_whatsapp' ) ) );
+	$info[] = array( 'message', __( 'হোয়াটসঅ্যাপ', 'orpitey' ), orpitey_mod( 'contact_whatsapp' ), 'https://wa.me/' . preg_replace( '/\D/', '', orpitey_mod( 'contact_whatsapp' ) ) );
 }
 
 while ( have_posts() ) :

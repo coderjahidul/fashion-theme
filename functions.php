@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ORPITEY_VERSION', '1.1.11' );
+define( 'ORPITEY_VERSION', '1.1.12' );
 define( 'ORPITEY_DIR', get_template_directory() );
 define( 'ORPITEY_URI', get_template_directory_uri() );
 

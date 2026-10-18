@@ -374,6 +374,27 @@
 				return;
 			}
 			wrap.classList.add( 'qty-stepper' );
+			if ( settings.bnDigits && ! wrap.querySelector( '.qty-stepper__slot' ) ) {
+				const slot = document.createElement( 'span' );
+				const shown = document.createElement( 'span' );
+				slot.className = 'qty-stepper__slot';
+				shown.className = 'qty-stepper__value';
+				shown.setAttribute( 'aria-hidden', 'true' );
+				const paint = () => {
+					shown.textContent = bnDigits( input.value );
+				};
+				paint();
+				slot.appendChild( shown );
+				wrap.insertBefore( slot, input );
+				slot.appendChild( input );
+				input.classList.add( 'is-bn' );
+				if ( $ ) {
+					$( input ).on( 'input change', paint );
+				} else {
+					input.addEventListener( 'input', paint );
+					input.addEventListener( 'change', paint );
+				}
+			}
 			const make = ( dir, label, path ) => {
 				const btn = document.createElement( 'button' );
 				btn.type = 'button';
@@ -396,7 +417,8 @@
 				} );
 				return btn;
 			};
-			wrap.insertBefore( make( -1, 'পরিমাণ কমান', '<path d="M5 12h14"/>' ), input );
+			const anchor = input.parentElement === wrap ? input : input.parentElement;
+			wrap.insertBefore( make( -1, 'পরিমাণ কমান', '<path d="M5 12h14"/>' ), anchor );
 			wrap.appendChild( make( 1, 'পরিমাণ বাড়ান', '<path d="M5 12h14"/><path d="M12 5v14"/>' ) );
 		} );
 	};

@@ -615,11 +615,11 @@ function orpitey_product_chat_links() {
 	$links = array();
 	$chat  = array(
 		'whatsapp'  => array(
-			'label' => 'WhatsApp',
+			'label' => __( 'হোয়াটসঅ্যাপ', 'orpitey' ),
 			'url'   => orpitey_mod( 'product_whatsapp' ),
 		),
 		'messenger' => array(
-			'label' => 'Messenger',
+			'label' => __( 'মেসেঞ্জার', 'orpitey' ),
 			'url'   => orpitey_mod( 'product_messenger' ),
 		),
 	);
