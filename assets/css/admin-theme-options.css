@@ -1,0 +1,232 @@
+.orpitey-theme-options .orpitey-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin: 16px 0 0;
+}
+
+.orpitey-theme-options .orpitey-tabs a {
+	display: inline-block;
+	padding: 8px 12px;
+	background: #f0f0f1;
+	border: 1px solid #c3c4c7;
+	border-bottom: none;
+	border-radius: 4px 4px 0 0;
+	color: #1d2327;
+	text-decoration: none;
+}
+
+.orpitey-theme-options .orpitey-tabs a.is-active {
+	background: #fff;
+	font-weight: 600;
+	position: relative;
+	top: 1px;
+}
+
+.orpitey-theme-options .orpitey-panel {
+	display: none;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	padding: 4px 16px 8px;
+}
+
+.orpitey-theme-options .orpitey-panel.is-active {
+	display: block;
+}
+
+.orpitey-theme-options .orpitey-panel .form-table {
+	margin-top: 0;
+}
+
+.orpitey-theme-options .orpitey-image-field {
+	display: inline-block;
+	max-width: 100%;
+}
+
+.orpitey-theme-options .orpitey-image-preview {
+	margin-bottom: 8px;
+}
+
+.orpitey-theme-options .orpitey-image-preview img {
+	display: block;
+	max-width: 320px;
+	max-height: 180px;
+	object-fit: cover;
+	border: 1px solid #c3c4c7;
+	background: #f6f7f7;
+}
+
+.orpitey-theme-options .orpitey-image-field.is-empty .orpitey-image-preview,
+.orpitey-theme-options .orpitey-image-field.is-empty .orpitey-image-remove {
+	display: none;
+}
+
+.orpitey-theme-options .orpitey-image-select,
+.orpitey-theme-options .orpitey-image-remove {
+	margin-right: 6px;
+}
+
+.orpitey-theme-options input[type="color"] {
+	width: 48px;
+	height: 32px;
+	padding: 2px;
+	border: 1px solid #c3c4c7;
+	background: #fff;
+	vertical-align: middle;
+}
+
+.orpitey-theme-options select {
+	min-width: 220px;
+}
+
+.orpitey-theme-options .submit {
+	padding-left: 0;
+}
+
+.orpitey-layout {
+	max-width: 640px;
+	margin: 16px 0;
+}
+
+.orpitey-layout__row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 8px;
+	padding: 8px 10px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+}
+
+.orpitey-layout__handle {
+	display: grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	color: #50575e;
+	cursor: grab;
+	touch-action: none;
+}
+
+.orpitey-layout__moves {
+	display: flex;
+}
+
+.orpitey-layout__move {
+	display: grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #2271b1;
+	cursor: pointer;
+}
+
+.orpitey-layout__move:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+.orpitey-layout__label {
+	flex: 1;
+	font-weight: 600;
+}
+
+.orpitey-layout__toggle {
+	display: grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	text-decoration: none;
+}
+
+.orpitey-layout__row.is-hidden .orpitey-layout__label {
+	opacity: 0.45;
+}
+
+.orpitey-layout__placeholder {
+	height: 48px;
+	margin: 0 0 8px;
+	border: 1px dashed #2271b1;
+	background: #f0f6fc;
+}
+
+.orpitey-repeater__title {
+	margin: 8px 0 0;
+	padding-top: 8px;
+	font-size: 14px;
+}
+
+.orpitey-repeater {
+	padding: 16px 4px 8px;
+}
+
+.orpitey-repeater__row {
+	margin: 0 0 12px;
+	padding: 12px 16px 4px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+}
+
+.orpitey-repeater__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.orpitey-repeater__row p {
+	margin: 0 0 10px;
+}
+
+.orpitey-repeater__add {
+	margin-top: 4px;
+}
+
+.orpitey-repeater--nested {
+	margin: 0 0 12px;
+	padding: 12px 12px 8px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+}
+
+.orpitey-repeater--nested .orpitey-repeater__row {
+	background: #f6f7f7;
+}
+
+.orpitey-icon-picker__caption {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.orpitey-icon-picker {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.orpitey-icon-picker label {
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+	color: #1d2327;
+	cursor: pointer;
+}
+
+.orpitey-icon-picker input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.orpitey-icon-picker label:has(input:checked) {
+	border-color: #2271b1;
+	color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+}
