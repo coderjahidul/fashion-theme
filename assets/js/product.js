@@ -41,6 +41,40 @@
 			gallery.querySelectorAll( '.product-gallery__thumb' ).forEach( ( t ) => t.classList.toggle( 'is-active', t === thumb ) );
 			showImage( thumb.dataset.src, thumb.dataset.srcset, thumb.dataset.full );
 		} );
+
+		const frame = gallery.querySelector( '.product-gallery__frame' );
+		const canHoverZoom = frame && mainImg && window.matchMedia( '(hover: hover) and (pointer: fine)' ).matches;
+
+		if ( canHoverZoom ) {
+			const setZoomOrigin = ( event ) => {
+				const rect = frame.getBoundingClientRect();
+				if ( ! rect.width || ! rect.height ) {
+					return;
+				}
+				const x = Math.min( 100, Math.max( 0, ( ( event.clientX - rect.left ) / rect.width ) * 100 ) );
+				const y = Math.min( 100, Math.max( 0, ( ( event.clientY - rect.top ) / rect.height ) * 100 ) );
+				mainImg.style.transformOrigin = x.toFixed( 2 ) + '% ' + y.toFixed( 2 ) + '%';
+			};
+
+			frame.addEventListener( 'pointerenter', ( event ) => {
+				if ( event.pointerType === 'touch' ) {
+					return;
+				}
+				setZoomOrigin( event );
+				frame.classList.add( 'is-zooming' );
+			} );
+
+			frame.addEventListener( 'pointermove', ( event ) => {
+				if ( ! frame.classList.contains( 'is-zooming' ) ) {
+					return;
+				}
+				setZoomOrigin( event );
+			} );
+
+			frame.addEventListener( 'pointerleave', () => {
+				frame.classList.remove( 'is-zooming' );
+			} );
+		}
 	}
 
 	const zoomDialog = document.querySelector( '[data-gallery-dialog]' );
